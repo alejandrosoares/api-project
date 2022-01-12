@@ -25,3 +25,36 @@ def PopulateView(request):
     elif request.method == 'GET':
 
         return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['GET', 'POST'])
+def SearchByKeywordView(request):
+    """ Search APIs by KEYWORD 
+
+    Search for APIs with their api field to start with the keyword passed
+    """
+
+    if request.method == 'POST':
+
+        keyword = request.data.get('keyword', False)
+
+        if keyword:
+
+            try:
+
+                apis = Api.objects.filter(api__istartswith=keyword)
+
+                serializer = ApiSerializer(apis, many=True)
+
+                return Response(serializer.data)
+
+            except Category.DoesNotExist:
+                pass
+
+        return Response([])
+
+    elif request.method == 'GET':
+
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+
