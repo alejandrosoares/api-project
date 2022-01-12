@@ -106,3 +106,32 @@ def OrdenedListView(request):
     elif request.method == 'GET':
 
         return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['GET', 'POST'])
+def ItemView(request):
+    """ Item View
+    
+    Get API by ID field (pk)
+    """
+
+    if request.method == 'POST':
+
+        pk = request.data.get('pk', False)
+
+        if pk:
+            try:
+                api = Api.objects.get(pk=pk)
+
+                serializer = ApiSerializer(api)
+
+                return Response(serializer.data)
+
+            except Api.DoesNotExist:
+                pass
+
+        return Response({})
+
+    elif request.method == 'GET':
+
+        return Response(status=status.HTTP_404_NOT_FOUND)

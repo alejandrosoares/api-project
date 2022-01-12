@@ -6,7 +6,8 @@ from .views import (
     PopulateView,
     SearchByKeywordView,
     SearchByCategoryView,
-    OrdenedListView
+    OrdenedListView,
+    ItemView
 )
 
 app_name = "apis"
@@ -15,4 +16,5 @@ urlpatterns = [
     path('keyword', SearchByKeywordView, name="keyword"),
     path('category', SearchByCategoryView, name="category"),
     path('ordened-list', OrdenedListView, name="ordened-list"),
+    path('item', ItemView, name="item"),
 ]
