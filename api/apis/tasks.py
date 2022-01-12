@@ -15,7 +15,7 @@ URL_API = 'https://api.publicapis.org/entries'
 
 
 @shared_task(bind=True)
-def populate_db():
+def populate_db(self):
 
     res = requests.get(URL_API)
 
