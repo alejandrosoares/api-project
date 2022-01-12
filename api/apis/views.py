@@ -9,6 +9,7 @@ from .tasks import populate_db
 from .models import Category, Api
 
 
+
 @api_view(['GET', 'POST'])
 def PopulateView(request):
     """Populate View"""
@@ -50,8 +51,11 @@ def SearchByKeywordView(request):
 
             except Category.DoesNotExist:
                 pass
-
-        return Response([])
+        
+        # Error
+        return Response({
+            'message': 'We could not find results, check the request body.'
+        })
 
     elif request.method == 'GET':
 
@@ -80,8 +84,11 @@ def SearchByCategoryView(request):
 
             except Category.DoesNotExist:
                 pass
-
-        return Response([])
+        
+        # Error
+        return Response({
+            'message': 'We could not find results, check the request body.'
+        })
 
     elif request.method == 'GET':
 
@@ -111,7 +118,7 @@ def OrdenedListView(request):
 @api_view(['GET', 'POST'])
 def ItemView(request):
     """ Item View
-    
+
     Get API by ID field (pk)
     """
 
@@ -129,8 +136,11 @@ def ItemView(request):
 
             except Api.DoesNotExist:
                 pass
-
-        return Response({})
+        
+        # Error
+        return Response({
+            'message': 'We could not find results, check the request body.'
+        })
 
     elif request.method == 'GET':
 
