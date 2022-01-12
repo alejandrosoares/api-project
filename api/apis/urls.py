@@ -4,12 +4,13 @@ from django.urls import path
 # Own
 from .views import (
     PopulateView,
-    SearchByKeywordView
+    SearchByKeywordView,
+    SearchByCategoryView
 )
 
 app_name = "apis"
 urlpatterns = [
     path('populate-apis', PopulateView, name="populate"),
     path('keyword', SearchByKeywordView, name="keyword"),
-    
+    path('category', SearchByCategoryView, name="category"),
 ]

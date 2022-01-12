@@ -58,3 +58,50 @@ def SearchByKeywordView(request):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 
+@api_view(['GET', 'POST'])
+def SearchByCategoryView(request):
+    """ Search By Category 
+
+    Search for APIs with the category passed
+    """
+
+    if request.method == 'POST':
+        category = request.data.get('category', False)
+
+        if category:
+            try:
+                category = Category.objects.get(category=category)
+
+                apis = Api.objects.filter(category=category)
+
+                serializer = ApiSerializer(apis, many=True)
+
+                return Response(serializer.data)
+
+            except Category.DoesNotExist:
+                pass
+
+        return Response([])
+
+    elif request.method == 'GET':
+
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['GET', 'POST'])
+def OrdenedListView(request):
+    """ Ordened List View 
+    List APIs ordened by ID field
+    """
+
+    if request.method == 'POST':
+
+        apis = Api.objects.all().order_by('id')
+
+        serializer = ApiSerializer(apis, many=True)
+
+        return Response(serializer.data)
+
+    elif request.method == 'GET':
+
+        return Response(status=status.HTTP_404_NOT_FOUND)
