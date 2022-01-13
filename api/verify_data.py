@@ -1,4 +1,3 @@
-from json import loads
 import requests
 import sys
 
