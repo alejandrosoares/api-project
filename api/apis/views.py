@@ -9,7 +9,6 @@ from .tasks import populate_db
 from .models import Category, Api
 
 
-
 @api_view(['GET', 'POST'])
 def PopulateView(request):
     """Populate View"""

@@ -1,0 +1,29 @@
+[
+    {
+        "api": "AdoptAPet",
+        "description": "Resource to help get pets adopted",
+        "auth": "apiKey",
+        "https": false,
+        "cors": "yes",
+        "link": "https://www.adoptapet.com/public/apis/pet_list.html",
+        "category": "Animals"
+    },
+    {
+        "api": "twitch",
+        "description": "Game Streaming API",
+        "auth": "OAuth",
+        "https": true,
+        "cors": "unknown",
+        "link": "https://dev.twitch.tv/docs",
+        "category": "Social"
+    },
+    {
+        "api": "Twitter",
+        "description": "Read and write Twitter data",
+        "auth": "OAuth",
+        "https": true,
+        "cors": "no",
+        "link": "https://developer.twitter.com/en/docs",
+        "category": "Social"
+    }
+]

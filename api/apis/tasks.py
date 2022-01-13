@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view
 from .models import Category, Api
 from .serializers import PopulateSerializer
 
-# Thrid parties
+# Third parties
 import requests
 from celery import shared_task
 
