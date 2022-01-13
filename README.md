@@ -37,26 +37,26 @@ el valor del string.
 ### 2.Configuracion del Celery
 Configuraci&oacute;n celery y redis como message broker. Ejecuci&oacute;n del servidor de redis
 
-### 4.Creaci&oacute;n de la funcionalidad <b>PopulateDB</b>
+### 3.Creaci&oacute;n de la funcionalidad <b>PopulateDB</b>
 - Creaci&oacute;n de PopulateSerializer.
 - Creaci&oacute;n de la funci&oacute;n asyncrona populate_db.
 - Creaci&oacute;n de la vista PopulateView y las urls.
 - Comprobaci&oacute;n de su funcionamiento.
 
-### 6. Creaci&oacute;n de la funcionalidad <b>search by keyword</b>
+### 4. Creaci&oacute;n de la funcionalidad <b>search by keyword</b>
 - Creaci&oacute;n de ApiSerializer.
 - Creaci&oacute;n de la vista SearchByIdView y las urls.
 - Comprobaci&oacute;n de su funcionamiento.
 
-### 7. Creaci&oacute;n de la funcionalidad <b>search by category</b>
+### 5. Creaci&oacute;n de la funcionalidad <b>search by category</b>
 - Creaci&oacute;n de la vista SearchByCategoryView y las urls.
 - Comprobaci&oacute;n de su funcionamiento.
 
-### 8. Creaci&oacute;n de la funcionalidad <b>ordened list</b>
+### 6. Creaci&oacute;n de la funcionalidad <b>ordened list</b>
 - Creaci&oacute;n de la vista OrdenedListView y las urls.
 - Comprobaci&oacute;n de su funcionamiento.
 
-### 9. Creaci&oacute;n de la funci&oacute;n <b>search item</b>
+### 7. Creaci&oacute;n de la funci&oacute;n <b>search item</b>
 - Creaci&oacute;n de la vista ItemView y las urls
 - Comprobaci&oacute;n de su funcionamiento.
 
@@ -65,7 +65,7 @@ deja el archivo <b>api/insomnia.json</b> para poder importar dentro de la aplica
 poder verficar el funcionamiento de las vistas.
 
 
-### 10. Realizaci&oacute;n de los TestView
+### 8. Realizaci&oacute;n de los TestView
 Se realizaron los test para cada vista.
 Los test se puede correr mediante:
 ```
